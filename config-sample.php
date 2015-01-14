@@ -1,9 +1,12 @@
 <?php
 
-define('MANDRILL_KEY', 'mandrill_key here');
-define('TO_ARRAY_KEY', 'to_array_key here');
-define('FROM_EMAIL_KEY', 'from_email_key here');
-define('FROM_NAME_KEY', 'from_name_key here');
-define('SUBJECT_KEY', 'subject_key here');
+define('MANDRILL_KEY', 'mandrill_key_here');
+define('TO_ARRAY', serialize(array(
+	array('email' => 'example1@example.net', 'name' => 'Example Name 1', 'type' => 'cc'),
+	array('email' => 'example2@example.net', 'name' => 'Example Name 2', 'type' => 'cc')
+)));
+define('FROM_EMAIL', 'from_email_here');
+define('FROM_NAME', 'from_name_here');
+define('SUBJECT', 'subject_here');
 
 ?>

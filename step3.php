@@ -10,16 +10,16 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 	require_once('api/mandrill/src/Mandrill.php');
 	
 	$Mandrill = new Mandrill(MANDRILL_KEY);
-	$to_array = unserialize(TO_ARRAY_KEY);
+	$to_array = unserialize(TO_ARRAY);
 
 	foreach ($_SESSION['csv'] as $entry) {
 	
 		$email_and_name = array(array('email' => $entry[4], 'name' => $entry[2].' '.$entry[3]));
 
 		$message = array(
-			'from_email' => FROM_EMAIL_KEY,
-			'from_name' => FROM_NAME_KEY,
-			'subject' => SUBJECT_KEY,
+			'from_email' => FROM_EMAIL,
+			'from_name' => FROM_NAME,
+			'subject' => SUBJECT,
 			'to' => array_merge($email_and_name, $to_array),
 			'text' => write_email($entry, false)
 		);
