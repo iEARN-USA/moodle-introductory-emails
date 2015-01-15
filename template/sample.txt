@@ -1,0 +1,16 @@
+Dear {firstname} {lastname},
+
+Welcome! You have been enrolled in a make-believe course.
+
+The course is officially open. This is an e-mail for you to test your login and read some introductory information about the course. Begin by using this information below to log into your course.
+
+To login to your course, go to http://test.com
+
+Your Username and Password are below. You will need to copy it exactly as it appears:
+
+Username: {username}
+Password: {password}
+
+See you online soon!
+
+The Course Facilitators
