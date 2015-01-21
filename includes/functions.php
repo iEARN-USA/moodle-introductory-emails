@@ -2,7 +2,7 @@
 
 function write_email($data, $html = false) {
 
-	$template_file = 'template/sample.txt';
+	$template_file = 'template/'.$_SESSION['template'];
 
 	if (!file_exists($template_file)) {
 	    return 'Template file not found!';

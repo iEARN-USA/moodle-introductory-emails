@@ -14,6 +14,8 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 	foreach($lines as $line) {
 		array_push($_SESSION['csv'], str_getcsv($line));
 	}
+
+	$_SESSION['template'] = $_POST['template'];
 	
 }
 
