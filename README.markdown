@@ -16,7 +16,7 @@ john_doe      | 123456        | John          | Doe           | john.doe@example
 
 ## Template
 
-To create a new template file just add a new .txt file to the template/ directory. Inside the file, make sure to add curly braces around all variables. For example, {firstname} for user's first name, or {email} for their email, etc. To modify the email template, edit template/your_template_file.txt.
+To create a new template file just add a new `.txt` file to the `template/` directory. Inside the file, make sure to add curly braces around all variables. For example, `{firstname}` for user's first name, or `{email}` for their email, etc. To modify the email template, edit `template/your_template_file.txt`.
 
 ## License
 
