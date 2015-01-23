@@ -92,8 +92,10 @@ require('includes/header.php');
 	</div>
 	
 	<form action="step3.php" method="post">
-		<a href="reset.php" class="btn btn-danger">Start Over</a>
-		<input class="btn btn-success pull-right" type="submit" value="Send Emails">
+		<div class="form-group">
+			<a href="reset.php" class="btn btn-danger">Start Over</a>
+			<input class="btn btn-success pull-right" type="submit" value="Send Emails">
+		</div>
 	</form>
 	
 </div><!-- /.container -->

@@ -10,23 +10,27 @@ require('includes/header.php');
 	</div>
 	
 	<form role="form" action="step2.php" method="post">
-		<select name="template" class="form-control">
-		  	<?php
-				$path = "template/";
-				$handle = opendir($path);   
+		<div class="form-group">
+			<label for="template">Template</label>
+			<select name="template" id="template" class="form-control">
+				<?php
+				$handle = opendir('template/');   
 				while ($file = readdir($handle)) {
-				    if (substr($file,0,1) != ".") {
-				    echo "<option value='$file'>$file</option>";
-				    }   
+					if (substr($file,0,1) != ".") {
+						echo "<option value='$file'>$file</option>";
+					}
 				}
 				closedir($handle);  
 				?>
-		</select>
-	  <div class="form-group">
-		<label for="raw_csv">RAW CSV</label>
-		<textarea class="form-control" id="raw_csv" name="raw_csv" rows="25"></textarea>
-	  </div>
-	  <input type="submit" class="btn btn-default" value="Submit">
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="raw_csv">Raw CSV</label>
+			<textarea class="form-control" id="raw_csv" name="raw_csv" rows="25"></textarea>
+		</div>
+		<div class="form-group">
+			<input type="submit" class="btn btn-primary" value="Submit">
+		</div>
 	</form>
 
 </div><!-- /.container -->

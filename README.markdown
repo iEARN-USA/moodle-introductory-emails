@@ -4,7 +4,7 @@ We built this tool for internal use at iEARN-USA to help streamline the onboardi
 
 ## Requirements
 
-PHP 5 and a Mandrill API key with the [Mandrill PHP API Client](https://mandrillapp.com/api/docs/index.php.html) installed in /api/mandrill.
+PHP 5 and a Mandrill API key with the [Mandrill PHP API Client](https://mandrillapp.com/api/docs/index.php.html) installed in `/api/mandrill`.
 
 ## Formatting
 
