@@ -13,5 +13,6 @@
 		}
 	});
 	$('#template').html(template_options);
+	$('#template').val(template_options.first().val());
 	
 })(window, document, jQuery);
