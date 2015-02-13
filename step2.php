@@ -1,5 +1,6 @@
 <?php
 
+require_once 'config.php';
 require_once 'includes/functions.php';
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
@@ -17,6 +18,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
 	$_SESSION['template'] = $_POST['template'];
 	
+	include_once 'template/'.str_ireplace('.txt','.php',$_SESSION['template']);
+	if(!isset($subject)) { $subject = constant('SUBJECT'); } 
+	if(!isset($to_array)) { $to_array = unserialize(TO_ARRAY); }
+	
 }
 
 
@@ -30,10 +35,10 @@ require('includes/header.php');
 		<h1><?php echo $title; ?></h1>
 	</div>
 	
-	  <div class="panel panel-default">
+	  <div class="panel panel-primary">
 	    
 	    <div class="panel-heading">
-	  	<h3 class="panel-title">Overview</h3>
+	  	<h3 class="panel-title"><?php echo $subject; ?></h3>
 	    </div>
 	    
 	    <div class="panel-body">
@@ -69,6 +74,14 @@ require('includes/header.php');
 	    </div>
 	    
 	  </div>
+	  
+		<div class="panel-footer"><?php
+		
+		foreach($to_array as $to) {
+			echo '<span title="'.$to['name'].'">'.$to['email'].'</span><span class="separator">, </span>';
+		}
+		
+		?></div>
   	
   	</div>
 	  

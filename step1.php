@@ -16,7 +16,7 @@ require('includes/header.php');
 				<?php
 				$handle = opendir('template/');   
 				while ($file = readdir($handle)) {
-					if (substr($file,0,1) != ".") {
+					if (substr($file,0,1) != "." && substr($file,-4) != ".php") {
 						echo "<option value='$file'>$file</option>";
 					}
 				}

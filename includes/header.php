@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="/css/email.css">
+	<link rel="stylesheet" href="styles.css">
 
 </head>
 

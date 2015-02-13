@@ -6,20 +6,23 @@ require_once 'includes/functions.php';
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
-
+	
 	require_once('api/mandrill/src/Mandrill.php');
 	
 	$Mandrill = new Mandrill(MANDRILL_KEY);
-	$to_array = unserialize(TO_ARRAY);
-
-	foreach ($_SESSION['csv'] as $entry) {
 	
+	include_once 'template/'.str_ireplace('.txt','.php',$_SESSION['template']);
+	if(!isset($subject)) { $subject = constant('SUBJECT'); } 
+	if(!isset($to_array)) { $to_array = unserialize(TO_ARRAY); } 
+	
+	foreach ($_SESSION['csv'] as $entry) {
+		
 		$email_and_name = array(array('email' => $entry[4], 'name' => $entry[2].' '.$entry[3]));
-
+		
 		$message = array(
 			'from_email' => FROM_EMAIL,
 			'from_name' => FROM_NAME,
-			'subject' => SUBJECT,
+			'subject' => $subject,
 			'to' => array_merge($email_and_name, $to_array),
 			'text' => write_email($entry, false)
 		);
